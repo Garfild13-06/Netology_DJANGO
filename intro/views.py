@@ -1,6 +1,6 @@
 import datetime
+
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.urls import reverse
 
 
@@ -19,3 +19,15 @@ def time_view(request):
 
 def index_view(request):
     return HttpResponse("<br>".join([reverse("h2"), reverse("t"), reverse("i")]))
+
+
+def hello(request):
+    name = request.GET.get("name")
+    age = int(request.GET.get("age", 20))
+    print(age)
+    return HttpResponse(f'hello {name}')
+
+
+def sum(request, a, b):
+    result = 0
+    return HttpResponse(f'Sum = {result}')

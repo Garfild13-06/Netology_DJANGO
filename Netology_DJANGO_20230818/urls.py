@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from intro.views import hello_view, time_view, index_view
+from intro.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello_view, name='h2'),
     path('time/', time_view, name='t'),
     path('index/', index_view, name='i'),
+    path('helloo/', hello, name='h3'),
+    path('sum/<a>/<b>/', sum, name='sum'),
 ]
